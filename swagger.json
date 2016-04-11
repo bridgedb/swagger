@@ -1,0 +1,497 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "0.9.0",
+        "title": "bridgedb webservices"
+    },
+    "consumes":["text/html"],
+    "produces":["*/*"],
+    "host": "webservice.bridgedb.org",
+    "schemes": [
+        "http"
+    ],
+    "paths": {
+        "/{organism}/xrefs/{system}/{id}": {
+            "get": {
+                "description": "Returns a list of xrefs that map to a given identifier, data source, and organism. Optionally restrict results to a given data source.",
+		"tags":["Genes"],
+                "parameters": [
+                    {
+                        "name": "dataSource",
+                        "in": "query",
+                        "description": "Result data source system code",
+                        "required": false,
+                        "type": "string",
+			"enum": ["En","Cs","X","E","Rh","Ck","Eco","Cg","Ch","Il","Uc","Rf","Pd","U","Ma","Lm","Wd","Wi","Cpc","Mb","Rk","Ce","S","L","Wg","Om","T","Mc","Ik","H", "Re", "Ag", "Q", "Ca", "Up","Cks"]
+
+                    },
+                    {
+                        "name": "organism",
+                        "in": "path",
+                        "description": "Organism",
+                        "required": true,
+                        "type": "string",
+			"enum": ["Human","Tuberculosis", "Mosquito", "Zebra fish", "Arabidopsis thaliana", "Rice", "Sea Squirt", "Barley", "Frog", "Soybean", "Fruit fly", "Horse", "Rhesus Monkey", 
+"Wine Grape", "Yeast", "Tomato", "Rat", "Cow", "Western Balsam Poplar", "Chimpanzee", "Indian Rice", "Dog", "Maize", "Pig", "Worm", "Platypus", "Chicken", "Fusarium graminearum", "Bacillus subtilis", "Escherichia coli", "Black mold", "Mouse"]
+                    },
+                    {
+                        "name": "system",
+                        "in": "path",
+                        "description": "Data source system code",
+                        "required": true,
+                        "type": "string",
+			"default": "L",
+			"enum": ["En","Cs","X","E","Rh","Ck","Eco","Cg","Ch","Il","Uc","Rf","Pd","U","Ma","Lm","Wd","Wi","Cpc","Mb","Rk","Ce","S","L","Wg","Om","T","Mc","Ik","H", "Re", "Ag", "Q", "Ca", "Up","Cks"]
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Identifier",
+                        "required": true,
+                        "type": "string",
+			"default": "1234"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns a tab delimeted list of xrefs that map to a given identifier"
+                    }
+                }
+            }
+        },
+        "/Human/xrefs/{system}/{id}": {
+            "get": {
+                "description": "",
+		"tags":["Metabolites"],
+                "parameters": [
+                    {
+                        "name": "datasource",
+                        "in": "query",
+                        "description": "Data source",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "organism",
+                        "in": "path",
+                        "description": "system",
+                        "required": true,
+                        "type": "string",			
+			"enum": [
+			    "Human","Tuberculosis", "Mosquito", "Zebra fish", "Arabidopsis thaliana", "Rice", "Sea Squirt", "Barley", "Frog", "Soybean", "Fruit fly", "Horse", "Rhesus Monkey", 
+"Wine Grape", "Yeast", "Tomato", "Rat", "Cow", "Western Balsam Poplar", "Chimpanzee", "Indian Rice", "Dog", "Maize", "Pig", "Worm", "Platypus", "Chicken", "Fusarium graminearum", "Bacillus subtilis", "Escherichia coli", "Black mold", "Mouse"
+			]
+                    },
+                    {
+                        "name": "system",
+                        "in": "path",
+                        "description": "system",
+                        "required": true,
+                        "type": "string",
+			"enum": ["En","Cs","X","E","Rh","Ck","Eco","Cg","Ch","Il","Uc","Rf","Pd","U","Ma","Lm","Wd","Wi","Cpc","Mb","Rk","Ce","S","L","Wg","Om","T","Mc","Ik","H", "Re", "Ag", "Q", "Ca", "Up","Cks"]
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "system",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    }
+                }
+            }
+        },
+
+        "/{organism}/xrefExists/{system}/{id}": {
+            "get": {
+                "description": "Returns 'true' or 'false' based on whether or not an xref exists in the database given an identifier, data source, and organism.",
+		"tags":["Genes"],
+                "parameters": [
+                    {
+                        "name": "organism",
+                        "in": "path",
+                        "description": "Organism",
+                        "required": true,
+                        "type": "string",
+                        "enum": [
+                            "Human","Tuberculosis", "Mosquito", "Zebra fish", "Arabidopsis thaliana", "Rice", "Sea Squirt", "Barley", "Frog", "Soybean", "Fruit fly", "Horse", "Rhesus Monkey",
+"Wine Grape", "Yeast", "Tomato", "Rat", "Cow", "Western Balsam Poplar", "Chimpanzee", "Indian Rice", "Dog", "Maize", "Pig", "Worm", "Platypus", "Chicken", "Fusarium graminearum", "Bacillus subtilis", "Escherichia coli", "Black mold", "Mouse"
+                        ]
+
+                    },
+                    {
+                        "name": "system",
+                        "in": "path",
+                        "description": "Data source system code",
+                        "required": true,
+                        "type": "string",
+			"default": "L",
+			"enum": ["En","Cs","X","E","Rh","Ck","Eco","Cg","Ch","Il","Uc","Rf","Pd","U","Ma","Lm","Wd","Wi","Cpc","Mb","Rk","Ce","S","L","Wg","Om","T","Mc","Ik","H", "Re", "Ag", "Q", "Ca", "Up","Cks"]
+                        
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Identifier",
+                        "required": true,
+			"default":"1234",
+                        "type": "string"
+
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns 'true' or 'false'"
+                    }
+                }
+            }
+        },
+        "/{organism}/search/{query}": {
+            "get": {
+                "description": "Returns a list of xrefs with identifiers that contain the query string for a given organism. Results are not restricted to exact matches. Optionally limit results to a specified number per data source.",
+		"tags":["Genes"],
+                "parameters": [
+                    {
+                        "name": "organism",
+                        "in": "path",
+	                "description": "Organism",
+                        "required": true,
+                        "type": "string",
+                        "enum": [
+                            "Human","Tuberculosis", "Mosquito", "Zebra fish", "Arabidopsis thaliana", "Rice", "Sea Squirt", "Barley", "Frog", "Soybean", "Fruit fly", "Horse", "Rhesus Monkey",
+"Wine Grape", "Yeast", "Tomato", "Rat", "Cow", "Western Balsam Poplar", "Chimpanzee", "Indian Rice", "Dog", "Maize", "Pig", "Worm", "Platypus", "Chicken", "Fusarium graminearum", "Bacillus subtilis", "Escherichia coli", "Black mold", "Mouse"
+                        ]
+
+                    },
+                    {
+                        "name": "query",
+                        "in": "path",
+                        "description": "Identifier query",
+                        "required": true,
+                        "type": "string",
+			"default":"1234"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Number of results per data source",
+                        "required": false,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns a tab delimited list of xrefs with identifiers that contain the query string for a given organism"
+                    }
+                }
+            }
+        },
+        "/{organism}/properties": {
+            "get": {
+                "description": "Returns the list of properties available for a given organism\n",
+		"tags":["Genes"],        
+                "parameters": [
+                    {
+                        "name": "organism",
+                        "in": "path",
+                        "description": "Organism",
+                        "required": true,
+                        "type": "string",
+                        "enum": [
+                            "Human","Tuberculosis", "Mosquito", "Zebra fish", "Arabidopsis thaliana", "Rice", "Sea Squirt", "Barley", "Frog", "Soybean", "Fruit fly", "Horse", "Rhesus Monkey",
+"Wine Grape", "Yeast", "Tomato", "Rat", "Cow", "Western Balsam Poplar", "Chimpanzee", "Indian Rice", "Dog", "Maize", "Pig", "Worm", "Platypus", "Chicken", "Fusarium graminearum", "Bacillus subtilis", "Escherichia coli", "Black mold", "Mouse"
+                        ]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns the list of properties available for a given organism"
+                    }
+                }
+            }
+        },
+        "/{organism}/sourceDataSources": {
+            "get": {
+                "description": "Returns a list of data sources available as xref sources for a given organism.",
+		"tags":["Genes"],
+                "parameters": [
+                    {
+                        "name": "organism",
+                        "in": "path",
+                        "description": "Organism",
+                        "required": true,
+                        "type": "string",
+                        "enum": [
+                            "Human","Tuberculosis", "Mosquito", "Zebra fish", "Arabidopsis thaliana", "Rice", "Sea Squirt", "Barley", "Frog", "Soybean", "Fruit fly", "Horse", "Rhesus Monkey",
+"Wine Grape", "Yeast", "Tomato", "Rat", "Cow", "Western Balsam Poplar", "Chimpanzee", "Indian Rice", "Dog", "Maize", "Pig", "Worm", "Platypus", "Chicken", "Fusarium graminearum", "Bacillus subtilis", "Escherichia coli", "Black mold", "Mouse"
+                        ]
+
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns a list of data sources available as xref sources."
+                    }
+                }
+            }
+        },
+        "/{organism}/targetDataSources": {
+            "get": {
+                "description": "Returns a list of data sources available as xref targets for a given organism.",
+		"tags":["Genes"],        
+                "parameters": [
+                    {
+                        "name": "organism",
+                        "in": "path",
+	                "description": "Organism",
+                        "required": true,
+                        "type": "string",
+                        "enum": [
+                            "Human","Tuberculosis", "Mosquito", "Zebra fish", "Arabidopsis thaliana", "Rice", "Sea Squirt", "Barley", "Frog", "Soybean", "Fruit fly", "Horse", "Rhesus Monkey",
+"Wine Grape", "Yeast", "Tomato", "Rat", "Cow", "Western Balsam Poplar", "Chimpanzee", "Indian Rice", "Dog", "Maize", "Pig", "Worm", "Platypus", "Chicken", "Fusarium graminearum", "Bacillus subtilis", "Escherichia coli", "Black mold", "Mouse"
+                        ]
+
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns a list of data sources available as xref targets."
+                    }
+                }
+            }
+        },
+        "/{organism}/isFreeSearchSupported": {
+            "get": {
+                "description": "Returns 'true' or 'false' based on whether or not /{organism}/search/{query} is supported for a given organism.",
+		"tags":["Genes"],
+                "parameters": [
+                    {
+                        "name": "organism",
+                        "in": "path",
+                        "description": "Organism short name",
+                        "required": true,
+                        "type": "string",
+                        "enum": [
+                            "Human","Tuberculosis", "Mosquito", "Zebra fish", "Arabidopsis thaliana", "Rice", "Sea Squirt", "Barley", "Frog", "Soybean", "Fruit fly", "Horse", "Rhesus Monkey",
+"Wine Grape", "Yeast", "Tomato", "Rat", "Cow", "Western Balsam Poplar", "Chimpanzee", "Indian Rice", "Dog", "Maize", "Pig", "Worm", "Platypus", "Chicken", "Fusarium graminearum", "Bacillus subtilis", "Escherichia coli", "Black mold", "Mouse"
+                        ]
+
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns 'true' or 'false'."
+                    }
+                }
+            }
+        },
+        "/{organism}/isMappingSupported/{source_system}/{target_system}": {
+            "get": {
+                "description": "Returns 'true' or 'false' based on whether or not /{organism}/xrefs/{system}/{id} would possibly return a {target_system} result given a {source_system} query. This function basically combines the results of /{organism}/sourceDataSources and /{organism}/targetDataSources into a single boolean result.",
+		"tags":["Genes"],
+                "parameters": [
+                    {
+                        "name": "organism",
+                        "in": "path",
+                        "description": "Organism",
+                        "required": true,
+                        "type": "string",
+                        "enum": [
+                            "Human","Tuberculosis", "Mosquito", "Zebra fish", "Arabidopsis thaliana", "Rice", "Sea Squirt", "Barley", "Frog", "Soybean", "Fruit fly", "Horse", "Rhesus Monkey",
+"Wine Grape", "Yeast", "Tomato", "Rat", "Cow", "Western Balsam Poplar", "Chimpanzee", "Indian Rice", "Dog", "Maize", "Pig", "Worm", "Platypus", "Chicken", "Fusarium graminearum", "Bacillus subtilis", "Escherichia coli", "Black mold", "Mouse"
+                        ]
+
+                    },
+                    {
+                        "name": "source_system",
+                        "in": "path",
+                        "description": "Query data source system code",
+                        "required": true,
+                        "type": "string",
+			"enum": ["En","Cs","X","E","Rh","Ck","Eco","Cg","Ch","Il","Uc","Rf","Pd","U","Ma","Lm","Wd","Wi","Cpc","Mb","Rk","Ce","S","L","Wg","Om","T","Mc","Ik","H", "Re", "Ag", "Q", "Ca", "Up","Cks"]
+
+                    },
+                    {
+                        "name": "target_system",
+                        "in": "path",
+                        "description": "Result data source system code",
+                        "required": true,
+                        "type": "string",
+			"enum": ["En","Cs","X","E","Rh","Ck","Eco","Cg","Ch","Il","Uc","Rf","Pd","U","Ma","Lm","Wd","Wi","Cpc","Mb","Rk","Ce","S","L","Wg","Om","T","Mc","Ik","H", "Re", "Ag", "Q", "Ca", "Up","Cks"]
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns 'true' or 'false'."
+                    }
+                }
+            }
+        },
+        "/{organism}/attributeSearch/{query}": {
+            "get": {
+                "description": "Returns a list of xrefs and associated attributes that contain the query string for a given organism. Results are not restricted to exact matches. Optionally limit results to a specified number per data source, or by the type of attribute. See possible attribute types via /{organism}/attributeSet.\n",
+		"tags":["Genes"],
+                "parameters": [
+                    {
+                        "name": "organism",
+                        "in": "path",
+                        "description": "Organism short name",
+                        "required": true,
+                        "type": "string",
+                        "enum": [
+                            "Human","Tuberculosis", "Mosquito", "Zebra fish", "Arabidopsis thaliana", "Rice", "Sea Squirt", "Barley", "Frog", "Soybean", "Fruit fly", "Horse", "Rhesus Monkey",
+"Wine Grape", "Yeast", "Tomato", "Rat", "Cow", "Western Balsam Poplar", "Chimpanzee", "Indian Rice", "Dog", "Maize", "Pig", "Worm", "Platypus", "Chicken", "Fusarium graminearum", "Bacillus subtilis", "Escherichia coli", "Black mold", "Mouse"
+                        ]
+
+                    },
+                    {
+                        "name": "query",
+                        "in": "path",
+                        "description": "Text to serch attributes",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "limit",
+                        "in": "query",
+                        "description": "Number of results",
+                        "required": false,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "attrName",
+                        "in": "query",
+                        "description": "Restrict search by attribute name (case sensitive). Use GET /{organism}/attributeSet to find out which attributes are supported.",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "returns a tab delimited list with the id, datasource and descriptions found."
+                    }
+                }
+            }
+        },
+        "/{organism}/attributes/{system}/{id}": {
+            "get": {
+                "description": "Returns the attributes for a given identifier, data source, organism. Optionally display only a specified attribute",
+		"tags":["Genes"],
+                "parameters": [
+                    {
+                        "name": "organism",
+                        "in": "path",
+                        "description": "Organism",
+                        "required": true,
+                        "type": "string",
+                        "enum": [
+                            "Human","Tuberculosis", "Mosquito", "Zebra fish", "Arabidopsis thaliana", "Rice", "Sea Squirt", "Barley", "Frog", "Soybean", "Fruit fly", "Horse", "Rhesus Monkey","Wine Grape", "Yeast", "Tomato", "Rat", "Cow", "Western Balsam Poplar", "Chimpanzee", "Indian Rice", "Dog", "Maize", "Pig", "Worm", "Platypus", "Chicken", "Fusarium graminearum", "Bacillus subtilis", "Escherichia coli", "Black mold", "Mouse"
+                        ]
+
+                    },
+                    {
+                        "name": "system",
+                        "in": "path",
+                        "description": "System",
+                        "required": true,
+                        "type": "string",
+			"default" : "En", 
+			"enum": ["En","Cs","X","E","Rh","Ck","Eco","Cg","Ch","Il","Uc","Rf","Pd","U","Ma","Lm","Wd","Wi","Cpc","Mb","Rk","Ce","S","L","Wg","Om","T","Mc","Ik","H", "Re", "Ag", "Q", "Ca", "Up","Cks"]                    
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Identifier",
+                        "required": true,
+                        "type": "string",
+			"default": "ENSG00000122375"
+                    },
+                    {
+                        "name": "attrName",
+                        "in": "query",
+                        "description": "Type of attribute",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns a tabdelimeted list with the attributes and their content"
+                    }
+                }
+            }
+        },
+        "/{organism}/attributeSet": {
+            "get": {
+                "description": "Returns the supported attributes to the given Organism.",
+		"tags":["Genes"],
+                "parameters": [
+                    {
+                        "name": "organism",
+                        "in": "path",
+                        "description": "Organism",
+                        "required": true,
+                        "type": "string",
+                        "enum": [
+                            "Human", "Tuberculosis", "Mosquito", "Zebra fish", "Arabidopsis thaliana", "Rice", "Sea Squirt", "Barley", "Frog", "Soybean", "Fruit fly", "Horse", "Rhesus Monkey","Wine Grape", "Yeast", "Tomato", "Rat", "Cow", "Western Balsam Poplar", "Chimpanzee", "Indian Rice", "Dog", "Maize", "Pig", "Worm", "Platypus", "Chicken", "Fusarium graminearum", "Bacillus subtilis", "Escherichia coli", "Black mold", "Mouse"
+                        ]
+
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Returns the supported attributes"
+                    }
+                }
+            }
+        },
+        "/{organism}/backPageText/{system}/{id}": {
+            "get": {
+                "description": "Currently not usable",
+		"tags":["Genes"],
+                "parameters": [
+                    {
+                        "name": "organism",
+                        "in": "path",
+                        "description": "system",
+                        "required": true,
+                        "type": "string",
+                        "enum": [
+                            "Human","Tuberculosis", "Mosquito", "Zebra fish", "Arabidopsis thaliana", "Rice", "Sea Squirt", "Barley", "Frog", "Soybean", "Fruit fly", "Horse", "Rhesus Monkey",
+"Wine Grape", "Yeast", "Tomato", "Rat", "Cow", "Western Balsam Poplar", "Chimpanzee", "Indian Rice", "Dog", "Maize", "Pig", "Worm", "Platypus", "Chicken", "Fusarium graminearum", "Bacillus subtilis", "Escherichia coli", "Black mold", "Mouse"
+                        ]
+
+                    },
+                    {
+                        "name": "system",
+                        "in": "path",
+                        "description": "Data source system code",
+			"default" : "L",
+                        "required": true,
+                        "type": "string",
+			"enum": ["En","Cs","X","E","Rh","Ck","Eco","Cg","Ch","Il","Uc","Rf","Pd","U","Ma","Lm","Wd","Wi","Cpc","Mb","Rk","Ce","S","L","Wg","Om","T","Mc","Ik","H", "Re", "Ag", "Q", "Ca", "Up","Cks"]
+                    },
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Identifier",
+                        "required": true,
+			"default" : 1234,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": ""
+                    }
+                }
+            }
+        }
+    }
+}
+	
+	
