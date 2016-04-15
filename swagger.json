@@ -13,7 +13,7 @@
     "paths": {
         "/{organism}/xrefs/{system}/{id}": {
             "get": {
-                "description": "Returns a list of xrefs that map to a given identifier, data source, and organism. Optionally restrict results to a given data source.",
+                "description": "Returns a list of xrefs that map to a given identifier, data source, and organism. Optional system code if you want to restrict the results to be for a specific data source",
 		"tags":["Genes"],
                 "parameters": [
                     {
@@ -61,7 +61,7 @@
         },
         "/Human/xrefs/{system}/{id}": {
             "get": {
-                "description": "",
+                "description": "Returns a list of xrefs that map to a given identifier, and data source. Despite the URL, this call is for any species, and not just Human. Optionally restrict results to a given data source.",
 		"tags":["Metabolites"],
                 "parameters": [
                     {
@@ -334,7 +334,7 @@
         "/{organism}/attributeSearch/{query}": {
             "get": {
                 "description": "Returns a list of xrefs and associated attributes that contain the query string for a given organism. Results are not restricted to exact matches. Optionally limit results to a specified number per data source, or by the type of attribute. See possible attribute types via /{organism}/attributeSet.\n",
-		"tags":["Genes"],
+		"tags":["Genes","Metabolites"],
                 "parameters": [
                     {
                         "name": "organism",
@@ -445,48 +445,6 @@
                 "responses": {
                     "200": {
                         "description": "Returns the supported attributes"
-                    }
-                }
-            }
-        },
-        "/{organism}/backPageText/{system}/{id}": {
-            "get": {
-                "description": "Currently not usable",
-		"tags":["Genes"],
-                "parameters": [
-                    {
-                        "name": "organism",
-                        "in": "path",
-                        "description": "system",
-                        "required": true,
-                        "type": "string",
-                        "enum": [
-                            "Human","Tuberculosis", "Mosquito", "Zebra fish", "Arabidopsis thaliana", "Rice", "Sea Squirt", "Barley", "Frog", "Soybean", "Fruit fly", "Horse", "Rhesus Monkey",
-"Wine Grape", "Yeast", "Tomato", "Rat", "Cow", "Western Balsam Poplar", "Chimpanzee", "Indian Rice", "Dog", "Maize", "Pig", "Worm", "Platypus", "Chicken", "Fusarium graminearum", "Bacillus subtilis", "Escherichia coli", "Black mold", "Mouse"
-                        ]
-
-                    },
-                    {
-                        "name": "system",
-                        "in": "path",
-                        "description": "Data source system code",
-			"default" : "L",
-                        "required": true,
-                        "type": "string",
-			"enum": ["En","Cs","X","E","Rh","Ck","Eco","Cg","Ch","Il","Uc","Rf","Pd","U","Ma","Lm","Wd","Wi","Cpc","Mb","Rk","Ce","S","L","Wg","Om","T","Mc","Ik","H", "Re", "Ag", "Q", "Ca", "Up","Cks"]
-                    },
-                    {
-                        "name": "id",
-                        "in": "path",
-                        "description": "Identifier",
-                        "required": true,
-			"default" : 1234,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": ""
                     }
                 }
             }
