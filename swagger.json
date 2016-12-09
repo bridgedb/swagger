@@ -20,7 +20,7 @@
                     {
                         "name": "dataSource",
                         "in": "query",
-                        "description": "(Optional) Restrict results by data source [conventional name](http://vocabularies.bridgedb.org/#conventionalName)",
+                        "description": "(Optional) Restrict results by data source [conventional name](http://vocabularies.bridgedb.org/#conventionalName). Alternatively, you can use [system code](http://vocabularies.bridgedb.org/#systemCode) instead of conventional name.",
                         "required": false,
                         "type": "string",
 			"enum": ["Affy","Agilent","BIND","BioCyc","BioGrid","BioModels Database","BioSystems","BRENDA","CAS","CCDS","ChEBI","ChEMBL compound","Chemspider","CodeLink","Database of Interacting Proteins","dbSNP","DrugBank","EcoCyc","EcoGene","EMBL","Ensembl","Ensembl B. subtilis","Ensembl C. elegans","Ensembl Chicken","Ensembl Chimp","Ensembl Cow","Ensembl Dog","Ensembl E. coli","Ensembl Fruitfly","Ensembl Horse","Ensembl Human","Ensembl M. tuberculosis","Ensembl Mosquito","Ensembl Mouse","Ensembl Pig","Ensembl Plants","Ensembl Rat","Ensembl Xenopus","Ensembl Yeast","Ensembl Zebrafish","Entrez Gene","Enzyme Nomenclature","FlyBase","GenBank","Gene Wiki","GeneOntology","Gramene Arabidopsis","Gramene Genes DB","Gramene Literature","Gramene Maize","Gramene Pathway","Gramene Rice","HGNC","HGNC Accession number","HMDB","HomoloGene","HPRD","Illumina","InChIKey","IntAct","InterPro","IPI","IRGSP Gene","KEGG Compound","KEGG Drug","KEGG Genes","KEGG Glycan","KEGG Pathway","KEGG Reaction","KNApSAcK","LIPID MAPS","LipidBank","MACiE","MaizeGDB","MatrixDB","MetaCyc","MGI","MINT","miRBase mature sequence","miRBase Sequence","NASC Gene","NCBI Protein","NCI Pathway Interaction Database","OMIM","Oryzabase","Other","Pathway Commons","PDB","Pfam","PharmGKB Drug","PharmGKB Gene","PharmGKB Pathways","PhosphoSite Protein","PINA","PlantGDB","PubChem-bioassay","PubChem-compound","PubChem-substance","Reactome","RefSeq","RESID","Rfam","RGD","Rhea","Rice Ensembl Gene","SGD","Small Molecule Pathway Database","SMART","SPIKE","SPRINT","STRING","SubstrateDB","SubtiWiki","SUPFAM","SWISS-MODEL","SwissLipids","Systems Biology Ontology","TAIR","TIGR","TTD Drug","TTD Target","TubercuList","UCSC Genome Browser","UniGene","Unipathway","Uniprot-SwissProt","Uniprot-TrEMBL","Wheat gene names","Wheat gene refs","Wikidata","WikiGenes","WikiPathways","Wikipedia","WormBase","XMetDB","ZFIN"]
@@ -68,7 +68,7 @@
                     {
                         "name": "conventionalName",
                         "in": "path",
-                        "description": "Source (input) data source [conventional name](http://vocabularies.bridgedb.org/#conventionalName)",
+                        "description": "Source (input) data source [conventional name](http://vocabularies.bridgedb.org/#conventionalName). Alternatively, you can use [system code](http://vocabularies.bridgedb.org/#systemCode) instead of conventional name.",
                         "required": true,
                         "type": "string",
 			"default": "Entrez Gene",
@@ -98,7 +98,7 @@
                     {
                         "name": "dataSource",
                         "in": "query",
-                        "description": "(Optional) Restrict results by data source [conventional name](http://vocabularies.bridgedb.org/#conventionalName)",
+                        "description": "(Optional) Restrict results by data source [conventional name](http://vocabularies.bridgedb.org/#conventionalName). Alternatively, you can use [system code](http://vocabularies.bridgedb.org/#systemCode) instead of conventional name.",
                         "required": false,
                         "type": "string"
                     },
@@ -144,7 +144,7 @@
                     {
                         "name": "conventionalName",
                         "in": "path",
-                        "description": "Source (input) data source [conventional name](http://vocabularies.bridgedb.org/#conventionalName)",
+                        "description": "Source (input) data source [conventional name](http://vocabularies.bridgedb.org/#conventionalName). Alternatively, you can use [system code](http://vocabularies.bridgedb.org/#systemCode) instead of conventional name.",
                         "required": true,
                         "type": "string",
 			"default": "ChEBI",
@@ -214,7 +214,7 @@
                     {
                         "name": "conventionalName",
                         "in": "path",
-                        "description": "Source (input) data source [conventional name](http://vocabularies.bridgedb.org/#conventionalName)",
+                        "description": "Source (input) data source [conventional name](http://vocabularies.bridgedb.org/#conventionalName). Alternatively, you can use [system code](http://vocabularies.bridgedb.org/#systemCode) instead of conventional name.",
                         "required": true,
                         "type": "string",
 			"default": "Entrez Gene",
@@ -560,7 +560,7 @@
                     {
                         "name": "sourceConventionalName",
                         "in": "path",
-                        "description": "[Conventional name](http://vocabularies.bridgedb.org/#conventionalName) for source (input/query) data source",
+                        "description": "[Conventional name](http://vocabularies.bridgedb.org/#conventionalName) for source (input/query) data source. Alternatively, you can use [system code](http://vocabularies.bridgedb.org/#systemCode) instead of conventional name.",
                         "required": true,
                         "type": "string",
 			"default": "Entrez Gene",
@@ -570,7 +570,7 @@
                     {
                         "name": "targetConventionalName",
                         "in": "path",
-                        "description": "[Conventional name](http://vocabularies.bridgedb.org/#conventionalName) for target (output/result) data source",
+                        "description": "[Conventional name](http://vocabularies.bridgedb.org/#conventionalName) for target (output/result) data source. Alternatively, you can use [system code](http://vocabularies.bridgedb.org/#systemCode) instead of conventional name.",
                         "required": true,
                         "type": "string",
 			"enum": ["Affy","Agilent","BIND","BioCyc","BioGrid","BioModels Database","BioSystems","BRENDA","CAS","CCDS","ChEBI","ChEMBL compound","Chemspider","CodeLink","Database of Interacting Proteins","dbSNP","DrugBank","EcoCyc","EcoGene","EMBL","Ensembl","Ensembl B. subtilis","Ensembl C. elegans","Ensembl Chicken","Ensembl Chimp","Ensembl Cow","Ensembl Dog","Ensembl E. coli","Ensembl Fruitfly","Ensembl Horse","Ensembl Human","Ensembl M. tuberculosis","Ensembl Mosquito","Ensembl Mouse","Ensembl Pig","Ensembl Plants","Ensembl Rat","Ensembl Xenopus","Ensembl Yeast","Ensembl Zebrafish","Entrez Gene","Enzyme Nomenclature","FlyBase","GenBank","Gene Wiki","GeneOntology","Gramene Arabidopsis","Gramene Genes DB","Gramene Literature","Gramene Maize","Gramene Pathway","Gramene Rice","HGNC","HGNC Accession number","HMDB","HomoloGene","HPRD","Illumina","InChIKey","IntAct","InterPro","IPI","IRGSP Gene","KEGG Compound","KEGG Drug","KEGG Genes","KEGG Glycan","KEGG Pathway","KEGG Reaction","KNApSAcK","LIPID MAPS","LipidBank","MACiE","MaizeGDB","MatrixDB","MetaCyc","MGI","MINT","miRBase mature sequence","miRBase Sequence","NASC Gene","NCBI Protein","NCI Pathway Interaction Database","OMIM","Oryzabase","Other","Pathway Commons","PDB","Pfam","PharmGKB Drug","PharmGKB Gene","PharmGKB Pathways","PhosphoSite Protein","PINA","PlantGDB","PubChem-bioassay","PubChem-compound","PubChem-substance","Reactome","RefSeq","RESID","Rfam","RGD","Rhea","Rice Ensembl Gene","SGD","Small Molecule Pathway Database","SMART","SPIKE","SPRINT","STRING","SubstrateDB","SubtiWiki","SUPFAM","SWISS-MODEL","SwissLipids","Systems Biology Ontology","TAIR","TIGR","TTD Drug","TTD Target","TubercuList","UCSC Genome Browser","UniGene","Unipathway","Uniprot-SwissProt","Uniprot-TrEMBL","Wheat gene names","Wheat gene refs","Wikidata","WikiGenes","WikiPathways","Wikipedia","WormBase","XMetDB","ZFIN"]
@@ -703,7 +703,7 @@
                     {
                         "name": "conventionalName",
                         "in": "path",
-                        "description": "Data source [conventional name](http://vocabularies.bridgedb.org/#conventionalName)",
+                        "description": "Data source [conventional name](http://vocabularies.bridgedb.org/#conventionalName). Alternatively, you can use [system code](http://vocabularies.bridgedb.org/#systemCode) instead of conventional name.",
                         "required": true,
                         "type": "string",
 			"default" : "Ensembl", 
