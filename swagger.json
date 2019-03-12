@@ -8,8 +8,8 @@
     "produces":["*/*"],
     "host": "webservice.bridgedb.org",
     "schemes": [
-        "http",
-        "https"
+        "https",
+        "http"
     ],
     "paths": {
         "/{organism}/xrefs/{systemCode}/{identifier}": {
