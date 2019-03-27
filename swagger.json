@@ -6,9 +6,8 @@
     },
     "consumes":["text/html"],
     "produces":["*/*"],
-    "host": "webservice.bridgedb.org",
+    "host": "bridgefull.prod.openrisknet.org",
     "schemes": [
-        "https",
         "http"
     ],
     "paths": {
