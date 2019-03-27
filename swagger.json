@@ -12,18 +12,18 @@
         "http"
     ],
     "paths": {
-        "/{organism}/xrefs/{systemCode}/{identifier}": {
+        "/{organism}/xrefs/{conventionalName}/{identifier}": {
             "get": {
-                "description": "Returns a list of xrefs that map to a given identifier, data source, and organism.",
+                "description": "Returns a list of xrefs that map to a given [identifier](http://www.rdaregistry.info/Elements/u/#P60052), data source, and organism.",
 		"tags":["Genes"],
                 "parameters": [
                     {
                         "name": "dataSource",
                         "in": "query",
-                        "description": "(Optional) Restrict results by data source [system code](http://vocabularies.bridgedb.org/#systemCode)",
+                        "description": "(Optional) Restrict results by data source [conventional name](http://vocabularies.bridgedb.org/#conventionalName). Alternatively, you can use [system code](http://vocabularies.bridgedb.org/#systemCode) instead of conventional name.",
                         "required": false,
                         "type": "string",
-			"enum": ["En","Cs","X","E","Rh","Ck","Eco","Cg","Ch","Il","Uc","Rf","Pd","U","Ma","Lm","Wd","Wi","Cpc","Mb","Rk","Ce","S","L","Wg","Om","T","Mc","Ik","H", "Re", "Ag", "Q", "Ca", "Up","Cks"]
+			"enum": ["Affy","Agilent","BIND","BioCyc","BioGrid","BioModels Database","BioSystems","BRENDA","CAS","CCDS","ChEBI","ChEMBL compound","Chemspider","CodeLink","Database of Interacting Proteins","dbSNP","DrugBank","EcoCyc","EcoGene","EMBL","Ensembl","Ensembl B. subtilis","Ensembl C. elegans","Ensembl Chicken","Ensembl Chimp","Ensembl Cow","Ensembl Dog","Ensembl E. coli","Ensembl Fruitfly","Ensembl Horse","Ensembl Human","Ensembl M. tuberculosis","Ensembl Mosquito","Ensembl Mouse","Ensembl Pig","Ensembl Plants","Ensembl Rat","Ensembl Xenopus","Ensembl Yeast","Ensembl Zebrafish","Entrez Gene","Enzyme Nomenclature","FlyBase","GenBank","Gene Wiki","GeneOntology","Gramene Arabidopsis","Gramene Genes DB","Gramene Literature","Gramene Maize","Gramene Pathway","Gramene Rice","HGNC","HGNC Accession number","HMDB","HomoloGene","HPRD","Illumina","InChIKey","IntAct","InterPro","IPI","IRGSP Gene","KEGG Compound","KEGG Drug","KEGG Genes","KEGG Glycan","KEGG Pathway","KEGG Reaction","KNApSAcK","LIPID MAPS","LipidBank","MACiE","MaizeGDB","MatrixDB","MetaCyc","MGI","MINT","miRBase mature sequence","miRBase Sequence","NASC Gene","NCBI Protein","NCI Pathway Interaction Database","OMIM","Oryzabase","Other","Pathway Commons","PDB","Pfam","PharmGKB Drug","PharmGKB Gene","PharmGKB Pathways","PhosphoSite Protein","PINA","PlantGDB","PubChem-bioassay","PubChem-compound","PubChem-substance","Reactome","RefSeq","RESID","Rfam","RGD","Rhea","Rice Ensembl Gene","SGD","Small Molecule Pathway Database","SMART","SPIKE","SPRINT","STRING","SubstrateDB","SubtiWiki","SUPFAM","SWISS-MODEL","SwissLipids","Systems Biology Ontology","TAIR","TIGR","TTD Drug","TTD Target","TubercuList","UCSC Genome Browser","UniGene","Unipathway","Uniprot-SwissProt","Uniprot-TrEMBL","Wheat gene names","Wheat gene refs","Wikidata","WikiGenes","WikiPathways","Wikipedia","WormBase","XMetDB","ZFIN"]
 
                     },
                     {
@@ -66,18 +66,18 @@
 				"Mouse", "Mus musculus"]
                     },
                     {
-                        "name": "systemCode",
+                        "name": "conventionalName",
                         "in": "path",
-                        "description": "Source (input) data source [system code](http://vocabularies.bridgedb.org/#systemCode)",
+                        "description": "Source (input) data source [conventional name](http://vocabularies.bridgedb.org/#conventionalName). Alternatively, you can use [system code](http://vocabularies.bridgedb.org/#systemCode) instead of conventional name.",
                         "required": true,
                         "type": "string",
-			"default": "L",
-			"enum": ["En","Cs","X","E","Rh","Ck","Eco","Cg","Ch","Il","Uc","Rf","Pd","U","Ma","Lm","Wd","Wi","Cpc","Mb","Rk","Ce","S","L","Wg","Om","T","Mc","Ik","H", "Re", "Ag", "Q", "Ca", "Up","Cks"]
+			"default": "Entrez Gene",
+			"enum": ["Affy","Agilent","BIND","BioCyc","BioGrid","BioModels Database","BioSystems","BRENDA","CAS","CCDS","ChEBI","ChEMBL compound","Chemspider","CodeLink","Database of Interacting Proteins","dbSNP","DrugBank","EcoCyc","EcoGene","EMBL","Ensembl","Ensembl B. subtilis","Ensembl C. elegans","Ensembl Chicken","Ensembl Chimp","Ensembl Cow","Ensembl Dog","Ensembl E. coli","Ensembl Fruitfly","Ensembl Horse","Ensembl Human","Ensembl M. tuberculosis","Ensembl Mosquito","Ensembl Mouse","Ensembl Pig","Ensembl Plants","Ensembl Rat","Ensembl Xenopus","Ensembl Yeast","Ensembl Zebrafish","Entrez Gene","Enzyme Nomenclature","FlyBase","GenBank","Gene Wiki","GeneOntology","Gramene Arabidopsis","Gramene Genes DB","Gramene Literature","Gramene Maize","Gramene Pathway","Gramene Rice","HGNC","HGNC Accession number","HMDB","HomoloGene","HPRD","Illumina","InChIKey","IntAct","InterPro","IPI","IRGSP Gene","KEGG Compound","KEGG Drug","KEGG Genes","KEGG Glycan","KEGG Pathway","KEGG Reaction","KNApSAcK","LIPID MAPS","LipidBank","MACiE","MaizeGDB","MatrixDB","MetaCyc","MGI","MINT","miRBase mature sequence","miRBase Sequence","NASC Gene","NCBI Protein","NCI Pathway Interaction Database","OMIM","Oryzabase","Other","Pathway Commons","PDB","Pfam","PharmGKB Drug","PharmGKB Gene","PharmGKB Pathways","PhosphoSite Protein","PINA","PlantGDB","PubChem-bioassay","PubChem-compound","PubChem-substance","Reactome","RefSeq","RESID","Rfam","RGD","Rhea","Rice Ensembl Gene","SGD","Small Molecule Pathway Database","SMART","SPIKE","SPRINT","STRING","SubstrateDB","SubtiWiki","SUPFAM","SWISS-MODEL","SwissLipids","Systems Biology Ontology","TAIR","TIGR","TTD Drug","TTD Target","TubercuList","UCSC Genome Browser","UniGene","Unipathway","Uniprot-SwissProt","Uniprot-TrEMBL","Wheat gene names","Wheat gene refs","Wikidata","WikiGenes","WikiPathways","Wikipedia","WormBase","XMetDB","ZFIN"]
                     },
                     {
                         "name": "identifier",
                         "in": "path",
-                        "description": "Identifier",
+                        "description": "[Identifier](http://www.rdaregistry.info/Elements/u/#P60052), such as '1234' for Entrez Gene 1234",
                         "required": true,
                         "type": "string",
 			"default": "1234"
@@ -85,20 +85,20 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Returns a tab-delimited list of xrefs that map to a given identifier"
+                        "description": "Returns a tab-delimited list of xrefs that map to a given [identifier](http://www.rdaregistry.info/Elements/u/#P60052)"
                     }
                 }
             }
         },
-        "/{organ­ism}/xrefs/{systemCode}/{identifier}": {
+        "/{organ­ism}/xrefs/{conventionalName}/{identifier}": {
             "get": {
-                "description": "Returns a list of xrefs that map to a given identifier, and data source. Optionally restrict results to a given data source.",
+                "description": "Returns a list of xrefs that map to a given [identifier](http://www.rdaregistry.info/Elements/u/#P60052), and data source. Optionally restrict results to a given data source.",
 		"tags":["Metabolites"],
                 "parameters": [
                     {
                         "name": "dataSource",
                         "in": "query",
-                        "description": "(Optional) Restrict results by data source [system code](http://vocabularies.bridgedb.org/#systemCode)",
+                        "description": "(Optional) Restrict results by data source [conventional name](http://vocabularies.bridgedb.org/#conventionalName). Alternatively, you can use [system code](http://vocabularies.bridgedb.org/#systemCode) instead of conventional name.",
                         "required": false,
                         "type": "string"
                     },
@@ -142,18 +142,18 @@
 				"Mouse", "Mus musculus"]
                     },
                     {
-                        "name": "systemCode",
+                        "name": "conventionalName",
                         "in": "path",
-                        "description": "Source (input) data source [system code](http://vocabularies.bridgedb.org/#systemCode)",
+                        "description": "Source (input) data source [conventional name](http://vocabularies.bridgedb.org/#conventionalName). Alternatively, you can use [system code](http://vocabularies.bridgedb.org/#systemCode) instead of conventional name.",
                         "required": true,
                         "type": "string",
-			"default": "Ce",
-			"enum": ["En","Cs","X","E","Rh","Ck","Eco","Cg","Ch","Il","Uc","Rf","Pd","U","Ma","Lm","Wd","Wi","Cpc","Mb","Rk","Ce","S","L","Wg","Om","T","Mc","Ik","H", "Re", "Ag", "Q", "Ca", "Up","Cks"]
+			"default": "ChEBI",
+			"enum": ["Affy","Agilent","BIND","BioCyc","BioGrid","BioModels Database","BioSystems","BRENDA","CAS","CCDS","ChEBI","ChEMBL compound","Chemspider","CodeLink","Database of Interacting Proteins","dbSNP","DrugBank","EcoCyc","EcoGene","EMBL","Ensembl","Ensembl B. subtilis","Ensembl C. elegans","Ensembl Chicken","Ensembl Chimp","Ensembl Cow","Ensembl Dog","Ensembl E. coli","Ensembl Fruitfly","Ensembl Horse","Ensembl Human","Ensembl M. tuberculosis","Ensembl Mosquito","Ensembl Mouse","Ensembl Pig","Ensembl Plants","Ensembl Rat","Ensembl Xenopus","Ensembl Yeast","Ensembl Zebrafish","Entrez Gene","Enzyme Nomenclature","FlyBase","GenBank","Gene Wiki","GeneOntology","Gramene Arabidopsis","Gramene Genes DB","Gramene Literature","Gramene Maize","Gramene Pathway","Gramene Rice","HGNC","HGNC Accession number","HMDB","HomoloGene","HPRD","Illumina","InChIKey","IntAct","InterPro","IPI","IRGSP Gene","KEGG Compound","KEGG Drug","KEGG Genes","KEGG Glycan","KEGG Pathway","KEGG Reaction","KNApSAcK","LIPID MAPS","LipidBank","MACiE","MaizeGDB","MatrixDB","MetaCyc","MGI","MINT","miRBase mature sequence","miRBase Sequence","NASC Gene","NCBI Protein","NCI Pathway Interaction Database","OMIM","Oryzabase","Other","Pathway Commons","PDB","Pfam","PharmGKB Drug","PharmGKB Gene","PharmGKB Pathways","PhosphoSite Protein","PINA","PlantGDB","PubChem-bioassay","PubChem-compound","PubChem-substance","Reactome","RefSeq","RESID","Rfam","RGD","Rhea","Rice Ensembl Gene","SGD","Small Molecule Pathway Database","SMART","SPIKE","SPRINT","STRING","SubstrateDB","SubtiWiki","SUPFAM","SWISS-MODEL","SwissLipids","Systems Biology Ontology","TAIR","TIGR","TTD Drug","TTD Target","TubercuList","UCSC Genome Browser","UniGene","Unipathway","Uniprot-SwissProt","Uniprot-TrEMBL","Wheat gene names","Wheat gene refs","Wikidata","WikiGenes","WikiPathways","Wikipedia","WormBase","XMetDB","ZFIN"]
                     },
                     {
                         "name": "identifier",
                         "in": "path",
-                        "description": "system",
+                        "description": "[Identifier](http://www.rdaregistry.info/Elements/u/#P60052), such as '1234' for Entrez Gene 1234",
                         "required": true,
                         "type": "string",
 			"default": "CHEBI:29108"
@@ -167,9 +167,9 @@
             }
         },
 
-        "/{organism}/xrefExists/{systemCode}/{identifier}": {
+        "/{organism}/xrefExists/{conventionalName}/{identifier}": {
             "get": {
-                "description": "Returns `true` or `false` based on whether or not an xref exists in the database given an identifier, data source, and organism.",
+                "description": "Returns `true` or `false` based on whether or not an xref exists in the database given an [identifier](http://www.rdaregistry.info/Elements/u/#P60052), data source, and organism.",
 		"tags":["Genes"],
                 "parameters": [
                     {
@@ -212,19 +212,19 @@
 				"Mouse", "Mus musculus"]
                     },
                     {
-                        "name": "systemCode",
+                        "name": "conventionalName",
                         "in": "path",
-                        "description": "Source (input) data source [system code](http://vocabularies.bridgedb.org/#systemCode)",
+                        "description": "Source (input) data source [conventional name](http://vocabularies.bridgedb.org/#conventionalName). Alternatively, you can use [system code](http://vocabularies.bridgedb.org/#systemCode) instead of conventional name.",
                         "required": true,
                         "type": "string",
-			"default": "L",
-			"enum": ["En","Cs","X","E","Rh","Ck","Eco","Cg","Ch","Il","Uc","Rf","Pd","U","Ma","Lm","Wd","Wi","Cpc","Mb","Rk","Ce","S","L","Wg","Om","T","Mc","Ik","H", "Re", "Ag", "Q", "Ca", "Up","Cks"]
+			"default": "Entrez Gene",
+			"enum": ["Affy","Agilent","BIND","BioCyc","BioGrid","BioModels Database","BioSystems","BRENDA","CAS","CCDS","ChEBI","ChEMBL compound","Chemspider","CodeLink","Database of Interacting Proteins","dbSNP","DrugBank","EcoCyc","EcoGene","EMBL","Ensembl","Ensembl B. subtilis","Ensembl C. elegans","Ensembl Chicken","Ensembl Chimp","Ensembl Cow","Ensembl Dog","Ensembl E. coli","Ensembl Fruitfly","Ensembl Horse","Ensembl Human","Ensembl M. tuberculosis","Ensembl Mosquito","Ensembl Mouse","Ensembl Pig","Ensembl Plants","Ensembl Rat","Ensembl Xenopus","Ensembl Yeast","Ensembl Zebrafish","Entrez Gene","Enzyme Nomenclature","FlyBase","GenBank","Gene Wiki","GeneOntology","Gramene Arabidopsis","Gramene Genes DB","Gramene Literature","Gramene Maize","Gramene Pathway","Gramene Rice","HGNC","HGNC Accession number","HMDB","HomoloGene","HPRD","Illumina","InChIKey","IntAct","InterPro","IPI","IRGSP Gene","KEGG Compound","KEGG Drug","KEGG Genes","KEGG Glycan","KEGG Pathway","KEGG Reaction","KNApSAcK","LIPID MAPS","LipidBank","MACiE","MaizeGDB","MatrixDB","MetaCyc","MGI","MINT","miRBase mature sequence","miRBase Sequence","NASC Gene","NCBI Protein","NCI Pathway Interaction Database","OMIM","Oryzabase","Other","Pathway Commons","PDB","Pfam","PharmGKB Drug","PharmGKB Gene","PharmGKB Pathways","PhosphoSite Protein","PINA","PlantGDB","PubChem-bioassay","PubChem-compound","PubChem-substance","Reactome","RefSeq","RESID","Rfam","RGD","Rhea","Rice Ensembl Gene","SGD","Small Molecule Pathway Database","SMART","SPIKE","SPRINT","STRING","SubstrateDB","SubtiWiki","SUPFAM","SWISS-MODEL","SwissLipids","Systems Biology Ontology","TAIR","TIGR","TTD Drug","TTD Target","TubercuList","UCSC Genome Browser","UniGene","Unipathway","Uniprot-SwissProt","Uniprot-TrEMBL","Wheat gene names","Wheat gene refs","Wikidata","WikiGenes","WikiPathways","Wikipedia","WormBase","XMetDB","ZFIN"]
                         
                     },
                     {
                         "name": "identifier",
                         "in": "path",
-                        "description": "Identifier",
+                        "description": "[Identifier](http://www.rdaregistry.info/Elements/u/#P60052), such as '1234' for Entrez Gene 1234",
                         "required": true,
 			"default":"1234",
                         "type": "string"
@@ -240,7 +240,7 @@
         },
         "/{organism}/search/{query}": {
             "get": {
-                "description": "Returns a list of xrefs with identifiers that contain the query string for a given organism. Results are not restricted to exact matches. Optionally limit results to a specified number per data source.",
+                "description": "Returns a list of xrefs with [identifiers](http://www.rdaregistry.info/Elements/u/#P60052) that contain the query string for a given organism. Results are not restricted to exact matches. Optionally limit results to a specified number per data source.",
 		"tags":["Genes"],
                 "parameters": [
                     {
@@ -285,7 +285,7 @@
                     {
                         "name": "query",
                         "in": "path",
-                        "description": "Identifier query",
+                        "description": "[Identifier](http://www.rdaregistry.info/Elements/u/#P60052) query",
                         "required": true,
                         "type": "string",
 			"default":"1234"
@@ -300,7 +300,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Returns a tab-delimited list of xrefs with identifiers that contain the query string for a given organism"
+                        "description": "Returns a tab-delimited list of xrefs with [identifiers](http://www.rdaregistry.info/Elements/u/#P60052) that contain the query string for a given organism"
                     }
                 }
             }
@@ -513,9 +513,9 @@
                 }
             }
         },
-        "/{organism}/isMappingSupported/{sourceSystemCode}/{targetSystemCode}": {
+        "/{organism}/isMappingSupported/{sourceConventionalName}/{targetConventionalName}": {
             "get": {
-                "description": "Returns `true` or `false` based on whether or not /{organism}/xrefs/{systemCode}/{identifier} would possibly return a {targetSystemCode} result given a {sourceSystemCode} query. This function basically combines the results of /{organism}/sourceDataSources and /{organism}/targetDataSources into a single boolean result.",
+                "description": "Returns `true` or `false` based on whether or not /{organism}/xrefs/{conventionalName}/{identifier} would possibly return a {targetConventionalName} result given a {sourceConventionalName} query. This function basically combines the results of /{organism}/sourceDataSources and /{organism}/targetDataSources into a single boolean result.",
 		"tags":["Genes"],
                 "parameters": [
                     {
@@ -558,22 +558,22 @@
 				"Mouse", "Mus musculus"]
                     },
                     {
-                        "name": "sourceSystemCode",
+                        "name": "sourceConventionalName",
                         "in": "path",
-                        "description": "[System code](http://vocabularies.bridgedb.org/#systemCode) for source (input/query) data source",
+                        "description": "[Conventional name](http://vocabularies.bridgedb.org/#conventionalName) for source (input/query) data source. Alternatively, you can use [system code](http://vocabularies.bridgedb.org/#systemCode) instead of conventional name.",
                         "required": true,
                         "type": "string",
-			"default": "L",
-			"enum": ["En","Cs","X","E","Rh","Ck","Eco","Cg","Ch","Il","Uc","Rf","Pd","U","Ma","Lm","Wd","Wi","Cpc","Mb","Rk","Ce","S","L","Wg","Om","T","Mc","Ik","H", "Re", "Ag", "Q", "Ca", "Up","Cks"]
+			"default": "Entrez Gene",
+			"enum": ["Affy","Agilent","BIND","BioCyc","BioGrid","BioModels Database","BioSystems","BRENDA","CAS","CCDS","ChEBI","ChEMBL compound","Chemspider","CodeLink","Database of Interacting Proteins","dbSNP","DrugBank","EcoCyc","EcoGene","EMBL","Ensembl","Ensembl B. subtilis","Ensembl C. elegans","Ensembl Chicken","Ensembl Chimp","Ensembl Cow","Ensembl Dog","Ensembl E. coli","Ensembl Fruitfly","Ensembl Horse","Ensembl Human","Ensembl M. tuberculosis","Ensembl Mosquito","Ensembl Mouse","Ensembl Pig","Ensembl Plants","Ensembl Rat","Ensembl Xenopus","Ensembl Yeast","Ensembl Zebrafish","Entrez Gene","Enzyme Nomenclature","FlyBase","GenBank","Gene Wiki","GeneOntology","Gramene Arabidopsis","Gramene Genes DB","Gramene Literature","Gramene Maize","Gramene Pathway","Gramene Rice","HGNC","HGNC Accession number","HMDB","HomoloGene","HPRD","Illumina","InChIKey","IntAct","InterPro","IPI","IRGSP Gene","KEGG Compound","KEGG Drug","KEGG Genes","KEGG Glycan","KEGG Pathway","KEGG Reaction","KNApSAcK","LIPID MAPS","LipidBank","MACiE","MaizeGDB","MatrixDB","MetaCyc","MGI","MINT","miRBase mature sequence","miRBase Sequence","NASC Gene","NCBI Protein","NCI Pathway Interaction Database","OMIM","Oryzabase","Other","Pathway Commons","PDB","Pfam","PharmGKB Drug","PharmGKB Gene","PharmGKB Pathways","PhosphoSite Protein","PINA","PlantGDB","PubChem-bioassay","PubChem-compound","PubChem-substance","Reactome","RefSeq","RESID","Rfam","RGD","Rhea","Rice Ensembl Gene","SGD","Small Molecule Pathway Database","SMART","SPIKE","SPRINT","STRING","SubstrateDB","SubtiWiki","SUPFAM","SWISS-MODEL","SwissLipids","Systems Biology Ontology","TAIR","TIGR","TTD Drug","TTD Target","TubercuList","UCSC Genome Browser","UniGene","Unipathway","Uniprot-SwissProt","Uniprot-TrEMBL","Wheat gene names","Wheat gene refs","Wikidata","WikiGenes","WikiPathways","Wikipedia","WormBase","XMetDB","ZFIN"]
 
                     },
                     {
-                        "name": "targetSystemCode",
+                        "name": "targetConventionalName",
                         "in": "path",
-                        "description": "[System code](http://vocabularies.bridgedb.org/#systemCode) for target (output/result) data source",
+                        "description": "[Conventional name](http://vocabularies.bridgedb.org/#conventionalName) for target (output/result) data source. Alternatively, you can use [system code](http://vocabularies.bridgedb.org/#systemCode) instead of conventional name.",
                         "required": true,
                         "type": "string",
-			"enum": ["En","Cs","X","E","Rh","Ck","Eco","Cg","Ch","Il","Uc","Rf","Pd","U","Ma","Lm","Wd","Wi","Cpc","Mb","Rk","Ce","S","L","Wg","Om","T","Mc","Ik","H", "Re", "Ag", "Q", "Ca", "Up","Cks"]
+			"enum": ["Affy","Agilent","BIND","BioCyc","BioGrid","BioModels Database","BioSystems","BRENDA","CAS","CCDS","ChEBI","ChEMBL compound","Chemspider","CodeLink","Database of Interacting Proteins","dbSNP","DrugBank","EcoCyc","EcoGene","EMBL","Ensembl","Ensembl B. subtilis","Ensembl C. elegans","Ensembl Chicken","Ensembl Chimp","Ensembl Cow","Ensembl Dog","Ensembl E. coli","Ensembl Fruitfly","Ensembl Horse","Ensembl Human","Ensembl M. tuberculosis","Ensembl Mosquito","Ensembl Mouse","Ensembl Pig","Ensembl Plants","Ensembl Rat","Ensembl Xenopus","Ensembl Yeast","Ensembl Zebrafish","Entrez Gene","Enzyme Nomenclature","FlyBase","GenBank","Gene Wiki","GeneOntology","Gramene Arabidopsis","Gramene Genes DB","Gramene Literature","Gramene Maize","Gramene Pathway","Gramene Rice","HGNC","HGNC Accession number","HMDB","HomoloGene","HPRD","Illumina","InChIKey","IntAct","InterPro","IPI","IRGSP Gene","KEGG Compound","KEGG Drug","KEGG Genes","KEGG Glycan","KEGG Pathway","KEGG Reaction","KNApSAcK","LIPID MAPS","LipidBank","MACiE","MaizeGDB","MatrixDB","MetaCyc","MGI","MINT","miRBase mature sequence","miRBase Sequence","NASC Gene","NCBI Protein","NCI Pathway Interaction Database","OMIM","Oryzabase","Other","Pathway Commons","PDB","Pfam","PharmGKB Drug","PharmGKB Gene","PharmGKB Pathways","PhosphoSite Protein","PINA","PlantGDB","PubChem-bioassay","PubChem-compound","PubChem-substance","Reactome","RefSeq","RESID","Rfam","RGD","Rhea","Rice Ensembl Gene","SGD","Small Molecule Pathway Database","SMART","SPIKE","SPRINT","STRING","SubstrateDB","SubtiWiki","SUPFAM","SWISS-MODEL","SwissLipids","Systems Biology Ontology","TAIR","TIGR","TTD Drug","TTD Target","TubercuList","UCSC Genome Browser","UniGene","Unipathway","Uniprot-SwissProt","Uniprot-TrEMBL","Wheat gene names","Wheat gene refs","Wikidata","WikiGenes","WikiPathways","Wikipedia","WormBase","XMetDB","ZFIN"]
                     }
                 ],
                 "responses": {
@@ -651,14 +651,14 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "returns a tab-delimited list with the identifier, data source and descriptions found."
+                        "description": "returns a tab-delimited list with the [identifier](http://www.rdaregistry.info/Elements/u/#P60052), data source and descriptions found."
                     }
                 }
             }
         },
-        "/{organism}/attributes/{systemCode}/{identifier}": {
+        "/{organism}/attributes/{conventionalName}/{identifier}": {
             "get": {
-                "description": "Returns the attributes for a given identifier, data source, organism. Optionally display only a specified attribute",
+                "description": "Returns the attributes for a given [identifier](http://www.rdaregistry.info/Elements/u/#P60052), data source, organism. Optionally display only a specified attribute",
 		"tags":["Genes"],
                 "parameters": [
                     {
@@ -701,18 +701,18 @@
 				"Mouse", "Mus musculus"]
                     },
                     {
-                        "name": "systemCode",
+                        "name": "conventionalName",
                         "in": "path",
-                        "description": "System",
+                        "description": "Data source [conventional name](http://vocabularies.bridgedb.org/#conventionalName). Alternatively, you can use [system code](http://vocabularies.bridgedb.org/#systemCode) instead of conventional name.",
                         "required": true,
                         "type": "string",
-			"default" : "En", 
-			"enum": ["En","Cs","X","E","Rh","Ck","Eco","Cg","Ch","Il","Uc","Rf","Pd","U","Ma","Lm","Wd","Wi","Cpc","Mb","Rk","Ce","S","L","Wg","Om","T","Mc","Ik","H", "Re", "Ag", "Q", "Ca", "Up","Cks"]                    
+			"default" : "Ensembl", 
+			"enum": ["Affy","Agilent","BIND","BioCyc","BioGrid","BioModels Database","BioSystems","BRENDA","CAS","CCDS","ChEBI","ChEMBL compound","Chemspider","CodeLink","Database of Interacting Proteins","dbSNP","DrugBank","EcoCyc","EcoGene","EMBL","Ensembl","Ensembl B. subtilis","Ensembl C. elegans","Ensembl Chicken","Ensembl Chimp","Ensembl Cow","Ensembl Dog","Ensembl E. coli","Ensembl Fruitfly","Ensembl Horse","Ensembl Human","Ensembl M. tuberculosis","Ensembl Mosquito","Ensembl Mouse","Ensembl Pig","Ensembl Plants","Ensembl Rat","Ensembl Xenopus","Ensembl Yeast","Ensembl Zebrafish","Entrez Gene","Enzyme Nomenclature","FlyBase","GenBank","Gene Wiki","GeneOntology","Gramene Arabidopsis","Gramene Genes DB","Gramene Literature","Gramene Maize","Gramene Pathway","Gramene Rice","HGNC","HGNC Accession number","HMDB","HomoloGene","HPRD","Illumina","InChIKey","IntAct","InterPro","IPI","IRGSP Gene","KEGG Compound","KEGG Drug","KEGG Genes","KEGG Glycan","KEGG Pathway","KEGG Reaction","KNApSAcK","LIPID MAPS","LipidBank","MACiE","MaizeGDB","MatrixDB","MetaCyc","MGI","MINT","miRBase mature sequence","miRBase Sequence","NASC Gene","NCBI Protein","NCI Pathway Interaction Database","OMIM","Oryzabase","Other","Pathway Commons","PDB","Pfam","PharmGKB Drug","PharmGKB Gene","PharmGKB Pathways","PhosphoSite Protein","PINA","PlantGDB","PubChem-bioassay","PubChem-compound","PubChem-substance","Reactome","RefSeq","RESID","Rfam","RGD","Rhea","Rice Ensembl Gene","SGD","Small Molecule Pathway Database","SMART","SPIKE","SPRINT","STRING","SubstrateDB","SubtiWiki","SUPFAM","SWISS-MODEL","SwissLipids","Systems Biology Ontology","TAIR","TIGR","TTD Drug","TTD Target","TubercuList","UCSC Genome Browser","UniGene","Unipathway","Uniprot-SwissProt","Uniprot-TrEMBL","Wheat gene names","Wheat gene refs","Wikidata","WikiGenes","WikiPathways","Wikipedia","WormBase","XMetDB","ZFIN"]                    
                     },
                     {
                         "name": "identifier",
                         "in": "path",
-                        "description": "Identifier",
+                        "description": "[Identifier](http://www.rdaregistry.info/Elements/u/#P60052), such as '1234' for Entrez Gene 1234",
                         "required": true,
                         "type": "string",
 			"default": "ENSG00000122375"
