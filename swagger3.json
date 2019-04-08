@@ -8,8 +8,8 @@
     "produces":["*/*"],
     "host": "webservice.bridgedb.org",
     "schemes": [
-        "https",
-        "http"
+        "http",
+        "https"
     ],
     "paths": {
         "/{organism}/xrefs/{systemCode}/{identifier}": {
@@ -228,9 +228,9 @@
             		"name": "body",
             		"description": "List of tab separated values: id<tab>systemcode\\n",
             		"required": true,
+			"collectionFormat": "tsv"
 			"schema":{
 				"example": "17716\tL\n17717\tL\nENSMUSG00000032462\tEn\nENSMUSG00000021938\tEn",
-				"format" : "string",
 				"type"   : "string"
 			}
           	    }
@@ -936,8 +936,20 @@
                 }
             }
         }
-    }
+    },
     
+    "definitions":{
+	"IdList2":{
+		"type":"tsv",
+		"properties":{
+			"id":{
+				"type":"string",
+				"description":""
+			}
+		}
+
+	}
+    }
 }
 	
 	
