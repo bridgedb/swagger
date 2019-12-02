@@ -15,7 +15,7 @@
         "/{organism}/xrefs/{systemCode}/{identifier}": {
             "get": {
                 "description": "Returns a list of xrefs that map to a given identifier, data source, and organism.",
-		"tags":["Genes"],
+		"tags":["Identifiers (Genes, proteins, metabolites, interactions)"],
                 "parameters": [
                     {
                         "name": "dataSource",
