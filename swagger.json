@@ -19,7 +19,7 @@ paths:
       parameters:
         - name: dataSource
           in: query
-          description: '(Optional) Restrict results by data source [system code](http://vocabularies.bridgedb.org/#systemCode)'
+          description: '(Optional) Restrict results by data source [system code](https://bridgedb.github.io/pages/system-codes.html)'
           required: false
           type: string
           enum:
@@ -128,7 +128,7 @@ paths:
             - Mus musculus
         - name: systemCode
           in: path
-          description: 'Source (input) data source [system code](http://vocabularies.bridgedb.org/#systemCode)'
+          description: 'Source (input) data source [system code](https://bridgedb.github.io/pages/system-codes.html)'
           required: true
           type: string
           default: L
@@ -186,7 +186,7 @@ paths:
       parameters:
         - name: dataSource
           in: query
-          description: '(Optional) Restrict results by data source [system code](http://vocabularies.bridgedb.org/#systemCode)'
+          description: '(Optional) Restrict results by data source [system code](https://bridgedb.github.io/pages/system-codes.html)'
           required: false
           type: string
           enum:
@@ -357,7 +357,7 @@ paths:
       parameters:
         - name: dataSource
           in: query
-          description: '(Optional) Restrict results by data source [system code](http://vocabularies.bridgedb.org/#systemCode)'
+          description: '(Optional) Restrict results by data source [system code](https://bridgedb.github.io/pages/system-codes.html)'
           required: false
           type: string
           enum:
@@ -550,7 +550,7 @@ paths:
             - Mus musculus
         - name: systemCode
           in: path
-          description: 'Source (input) data source [system code](http://vocabularies.bridgedb.org/#systemCode)'
+          description: 'Source (input) data source [system code](https://bridgedb.github.io/pages/system-codes.html)'
           required: true
           type: string
           default: L
