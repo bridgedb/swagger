@@ -14,7 +14,7 @@ paths:
       parameters:
       - name: dataSource
         in: query
-        description: (Optional) Restrict results by data source [system code](http://vocabularies.bridgedb.org/#systemCode)
+        description: (Optional) Restrict results by data source [system code](https://bridgedb.github.io/pages/system-codes.html)
         schema:
           type: string
           enum:
