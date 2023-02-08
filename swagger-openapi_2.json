@@ -313,7 +313,7 @@ paths:
         required: true
         schema:
           type: string
-          default: H
+          default: L
           enum:
           - En
           - Cs
@@ -354,32 +354,18 @@ paths:
       requestBody:
         description: List of identifiers. The separator is a new line (\n)
         content:
-          text/plain:
+          text/html:
             schema:
               type: string
               example: |-
-                DAPK1
+                ENSMUSG00000063455
+                ENSMUSG00000073823
+                ENSMUSG00000037031
         required: true
       responses:
         200:
           description: Returns a tab-delimited list of xrefs that map to a given identifier
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                    Identifier:
-                      type: object
-                      properties:
-                        datasource:
-                         type: string
-                        result set: 
-                         type: array
-                         items:
-                           $ref: '#/components/schemas/identifier'
-            text/plain:
-              schema:
-                type: string
+          content: {}
       x-codegen-request-body-name: body
   /{organism}/xrefsBatch:
     post:
@@ -502,32 +488,17 @@ paths:
       requestBody:
         description: 'List of tab separated values: id<tab>systemcode\n'
         content:
-          text/plain:
+          text/html:
             schema:
               type: string
               format: string
-              example: "DAPK1\tH\n672\tL"
+              example: "17716\tL\n17717\tL\nENSMUSG00000032462\tEn\nENSMUSG00000021938\t\
+                En"
         required: true
       responses:
         200:
           description: Returns a tab-delimited list of xrefs that map to a given identifier
-          content:            
-            application/json:
-              schema:
-                type: object
-                properties:
-                    Identifier:
-                      type: object
-                      properties:
-                        datasource:
-                         type: string
-                        result set: 
-                         type: array
-                         items:
-                           $ref: '#/components/schemas/identifier'
-            text/plain:
-              schema:
-                type: string
+          content: {}
       x-codegen-request-body-name: body
   /{organism}/xrefExists/{systemCode}/{identifier}:
     get:
@@ -1636,7 +1607,4 @@ paths:
         200:
           description: Returns the supported attributes
           content: {}
-components:
-    schemas:
-      identifier:
-        type: string
+components: {}
