@@ -1,9 +1,9 @@
 openapi: 3.0.0
 info:
   version: 1.0.1
-  title: bridgedb webservices
+  title: BridgeDb Webservices
 servers:
-- url: http://localhost:8080
+- url: https://webservice.bridgedb.org
 paths:
   /{organism}/xrefs/{systemCode}/{identifier}:
     get:
