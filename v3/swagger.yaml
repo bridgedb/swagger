@@ -514,5 +514,6 @@ components:
         type: string
         description: TAB separated values with one identifier/system code combination per line
         example: |-
-          Q90038963\tWd
-          P0DTD1-PRO_0000449625\tS
+          Q90038963	Wd
+          P0DTD1-PRO_0000449625	S
+          ENSMUSG00000032462	En
